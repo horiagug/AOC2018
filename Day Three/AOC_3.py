@@ -21,6 +21,7 @@ def main():
 
 # If the Elves all proceed with their own plans, none of them will have enough fabric. How many square inches of
 # fabric are within two or more claims?
+
     fabric = {}
     input_lines = open('input').read().splitlines()
 
@@ -54,9 +55,9 @@ def get_indices(line):
     width = int(ls[3].split('x')[0])
     height = int(ls[3].split('x')[1])
 
-    for i in range (up, up+height):
-        for j in range (left, left+width):
-            yield(i,j)
+    for i in range(up, up+height):
+        for j in range(left, left+width):
+            yield(i, j)
 
 
 def compute_overlap(fabric, input_lines):
