@@ -114,7 +114,7 @@ def biggest_reaction(input):
 def print_header():
     print("")
     print("######################################")
-    print("######## Advent of code day 4 ########")
+    print("######## Advent of code day 5 ########")
     print("######################################")
     print("")
 
