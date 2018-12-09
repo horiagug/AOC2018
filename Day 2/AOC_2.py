@@ -42,7 +42,7 @@ def compute_checksum():
     with open('input') as input_list:
         for line in input_list:
             counted_values = Counter(line).values()
-            if 2 in  counted_values:
+            if 2 in counted_values:
                 two_count += 1
             if 3 in counted_values:
                 three_count += 1
@@ -52,7 +52,7 @@ def compute_checksum():
 
 def common_box_id():
     with open('input') as input_list:
-        for a,b in combinations(input_list, 2):
+        for a, b in combinations(input_list, 2):
             l = ''.join([x for x, y in zip(a, b) if x == y])
             if len(l) == len(a) - 1:
                 print(l)
