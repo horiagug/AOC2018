@@ -78,13 +78,13 @@ def main():
     # What would the new winning Elf's score be if the number of the last marble were 100 times larger?
 
     # Input is: 452 players; last marble is worth 7125000 points
-    print("Answer to part 1 is: {}".format(marbles(452, 7125000)))
+    print("Answer to part 2 is: {}".format(marbles(452, 7125000)))
 
 
 def print_header():
     print("")
     print("######################################")
-    print("######## Advent of code day 8 ########")
+    print("######## Advent of code day 9 ########")
     print("######################################")
     print("")
 
@@ -100,7 +100,7 @@ class Node:
 def normal_marble(pos, new):
     new.next = pos.next
     new.prev = pos
-    new.prev.next = new
+    pos.next = new
     new.next.prev = new
 
 
