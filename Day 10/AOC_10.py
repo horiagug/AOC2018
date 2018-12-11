@@ -198,6 +198,11 @@ def print_grid(points):
 
     temp = tuple(map(sorted, zip(*grid)))
 
+    miny = temp[1][0]
+    maxy = temp[1][-1]
+    minx = temp[0][0]
+    maxx = temp[0][-1]
+
     # min y point max y point
     for y in range(temp[1][0], temp[1][-1] + 1):
         out = '.'
@@ -209,11 +214,14 @@ def print_grid(points):
                 out += '.'
         print(out)
 
+    return abs(maxx - minx), abs(maxy - miny)
+
 
 def get_word(points):
 
     number_of_runs = 0
-
+    exit = (10000000, 100000000)
+    x = (10000000, 100000000)
     while True:
 
         # Round 'em up
@@ -222,15 +230,15 @@ def get_word(points):
             p[0][1] += p[1][1]
 
         if printing_range(points):
-            print_grid(points)
+            x = print_grid(points)
             print(number_of_runs +1)
 
-        number_of_runs += 1
-
-        # After running this a few times, managed to figure out that after these many runs the result is found for my
-        # input, your experience might be different :-)
-        if number_of_runs > 10640:
+        if x < exit:
+            exit = x
+        elif x > exit:
             break
+
+        number_of_runs += 1
 
 
 def print_header():
