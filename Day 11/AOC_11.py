@@ -88,9 +88,9 @@ def main():
 
     grid = [[0 for x in range(301)] for y in range(301)]
 
-    for y in range(1, 300):
-        for x in range(1, 300):
-            grid[x][y] = int(compute_power(7403, x, y))
+    for y in range(1, 301):
+        for x in range(1, 301):
+            grid[x][y] = compute_power(7403, x, y)
 
     compute_puzzle(grid)
 
@@ -116,8 +116,8 @@ def compute_power(serial_number, x, y):
     pwr = rackID * y
     pwr += serial_number
     pwr *= rackID
-    pwr = pwr / 100 % 10 - 5
-    return pwr
+    pwr = int(pwr / 100)
+    return pwr % 10 - 5
 
 
 def print_header():
