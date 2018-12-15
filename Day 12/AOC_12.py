@@ -133,7 +133,7 @@ def compute(rules, generations):
     for i in range(1, generations + 1):
         string = ''
         new_state = set()
-        for index in range(min(state)- 2, max(state)+3):
+        for index in range(min(state) - 2, max(state)+3):
             for rule in rules:
                 is_respected = False
                 for x in range(5):
@@ -155,7 +155,7 @@ def compute(rules, generations):
                         new_state.add(index)
                     break
 
-        for j in range(min(new_state), max(new_state) +1):
+        for j in range(min(new_state), max(new_state) + 1):
             if j in new_state: string += '#'
             else: string += '.'
 
@@ -172,7 +172,7 @@ def compute(rules, generations):
 def print_header():
     print("")
     print("######################################")
-    print("####### Advent of code day 11 ########")
+    print("####### Advent of code day 12 ########")
     print("######################################")
     print("")
 
