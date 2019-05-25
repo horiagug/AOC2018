@@ -1,5 +1,9 @@
 import collections
 
+from header import print_header
+
+print_header()
+
 with open('input') as f:
     lines = f.readlines()
 
@@ -42,7 +46,6 @@ def m_dist(x, y, x1, y1):
 
 
 [part_1(*p1) for p1 in args];
-print('part 1:',
-      max(result.values()));
-print('part 2:',
-      sum(1 for p1 in args if part_2(*p1)))
+
+print('part 1:', max(result.values()));
+print('part 2:', sum(1 for p1 in args if part_2(*p1)))

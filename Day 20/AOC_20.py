@@ -11,10 +11,12 @@ Regex:
     Start is ^
     End is $
     Branching is marked by |
-    (NEWS|) means that the paranthesis can be skipped
+    (NEWS|) means that the parenthesis can be skipped
 
 """
 import networkx
+
+from header import print_header
 
 
 def main():
@@ -56,15 +58,6 @@ def main():
 
     print('Answer to part 1 is: {}'.format(max(lengths.values())))
     print('Answer to part2 is: {}'.format(sum(1 for values in lengths.values() if values >= 1000)))
-
-
-def print_header():
-
-    print("")
-    print("######################################")
-    print("####### Advent of code day 20 ########")
-    print("######################################")
-    print("")
 
 
 if __name__ == '__main__':
